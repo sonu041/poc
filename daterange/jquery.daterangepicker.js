@@ -1554,7 +1554,6 @@
                     while (countDays(timeTmp, opt.start) > 1) {
                         var arr = opt.beforeShowDay(new Date(timeTmp));
                         if (!arr[0]) {
-                            valid = false;
                             break;
                         }
                         if (Math.abs(timeTmp - opt.start) < 86400000) break;
