@@ -5,7 +5,10 @@ $(function()
 	{
 		beforeShowDay: function(t)
 		{
-			var dateRange = 'May 04 2017,May 09 2017,May 15 2017-May 30 2017,Jun 5 2017-Jun 09 2017'; //Change the configuration here.
+			//Change the configuration here.
+			//var dateRange = 'May 04 2017,May 09 2017,May 15 2017-May 30 2017,Jun 5 2017-Jun 09 2017';
+			//Get the data from html page of input-date id.
+			var dateRange = $('#input-date').text();
 			var dateArray = dateRange.split(",");	//Split the data separated by coma and store in array.
 			var disabledDateArray = [];
 			var disabledDateArrayList = [];
@@ -20,7 +23,7 @@ $(function()
 					else {
 						disabledDateArrayList.push(date);
 					}
-      });
+			});
 			
 			var valid = true;
 
@@ -36,7 +39,7 @@ $(function()
 					if(theDate >= new Date(dateL[0]) && theDate <= new Date(dateL[1])) {
 							valid = false;
 					} 
-      });
+			});
 	
 			var _class = '';
 			var _tooltip = valid ? '' : 'not available';
